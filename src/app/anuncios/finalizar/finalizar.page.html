@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/anuncios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle anuncio</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Necesito pintor casa 3 pisos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-text-justify">
+            Necesito pintor que tenga experiencia en pintado de maquinaria, equipos y accesorios así también para apoyar en las labores del taller cuando se necesite.
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">Ubicación</ion-col>
+          <ion-col size="6">TRUJILLO, LA LIBERTAD</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">Fecha publicación</ion-col>
+          <ion-col size="6">hace 3 minutos</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">Estado</ion-col>
+          <ion-col size="6">EN PROCESO</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-text-center">
+      <ion-col>
+        <ion-button color="medium" (click)="finalizarAnuncio('1')">Finalizar anuncio</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col>
+        <ion-text class="ion-text-center">
+          <h3>Colaboradores</h3>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Trabajador 1</ion-card-subtitle>
+      <ion-card-title class="ion-text-center">Luis Guillermo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+      <img src="https://freepikpsd.com/media/2019/10/default-user-profile-image-png-6-Transparent-Images.png" />
+      <p>Descipción trabajador 1</p>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star-half-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+          </ion-col>
+          <ion-col size="6">1 evaluación</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    <ion-item href="#" class="ion-text-center">
+      <ion-label>Ver Perfil</ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>
