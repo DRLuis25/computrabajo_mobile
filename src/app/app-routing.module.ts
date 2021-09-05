@@ -18,6 +18,10 @@ const routes: Routes = [
 				loadChildren: () => import('./anuncios/finalizar/finalizar.module').then( m => m.FinalizarPageModule)
 			},
 			{
+				path: 'finalizar/:anuncioId/valoracion/:termino',
+				loadChildren: () => import('./anuncios/finalizar/valoracion/valoracion.module').then( m => m.ValoracionPageModule)
+			},
+			{
 				path: '',
 				redirectTo: '/anuncios/mis-anuncios',
 				pathMatch: 'full'

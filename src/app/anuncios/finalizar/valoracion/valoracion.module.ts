@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FinalizarPageRoutingModule } from './finalizar-routing.module';
+import { ValoracionPageRoutingModule } from './valoracion-routing.module';
 
-import { FinalizarPage } from './finalizar.page';
+import { ValoracionPage } from './valoracion.page';
 import { IonicRatingModule } from 'ionic-rating';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { IonicRatingModule } from 'ionic-rating';
 		CommonModule,
 		FormsModule,
 		IonicModule,
-		FinalizarPageRoutingModule,
+		ValoracionPageRoutingModule,
 		IonicRatingModule
 	],
-	declarations: [FinalizarPage]
+	declarations: [ValoracionPage]
 })
-export class FinalizarPageModule {}
+export class ValoracionPageModule {}
