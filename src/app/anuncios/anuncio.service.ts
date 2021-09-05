@@ -12,8 +12,8 @@ export class AnuncioService {
 	getAnuncios(){
 		return this.http.get<any>('http://localhost:8000/api/anuncios');
 	}
-	getAnuncioById(){
-		return this.http.get('http://localhost:8000/api/anuncios/1');
+	getAnuncioById(id: string){
+		return this.http.get<any>('http://localhost:8000/api/anuncios/'+id);
 	}
 	createAnuncio(){
 	}
