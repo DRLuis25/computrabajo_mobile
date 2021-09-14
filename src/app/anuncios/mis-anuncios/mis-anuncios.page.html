@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>mis-anuncios (Parte Alejandro)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let anuncio of anuncios" [routerLink]="['/anuncios/finalizar',anuncio.id]">
+    <ion-card-header>
+      <ion-card-subtitle>Anuncio</ion-card-subtitle>
+      <ion-card-title>{{anuncio.titulo}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{anuncio.descripcion}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

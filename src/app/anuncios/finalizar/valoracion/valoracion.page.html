@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/anuncios/finalizar/{{anuncio.id}}"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Valorar anuncio</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{anuncio.titulo}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-text-justify">
+            Por favor, deje un comentario y califique a los colaboradores en el proyecto
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">Fecha publicación</ion-col>
+          <ion-col size="6">{{anuncio.creado_el}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">Estado</ion-col>
+          <ion-col size="6">{{anuncio.estado}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h3>Valoración</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding ion-text-center">
+        <ion-col size="6" class="ion-align-self-center">Calidad</ion-col>
+        <ion-col size="6" class="ion-no-padding">
+          <ion-rating [rate]="0"
+            [readonly] = "false">
+          </ion-rating>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding ion-text-center">
+        <ion-col size="6" class="ion-align-self-center">Comunicación</ion-col>
+        <ion-col size="6" class="ion-no-padding">
+          <ion-rating [rate]="0"
+            [readonly] = "false">
+          </ion-rating>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding ion-text-center">
+        <ion-col size="6" class="ion-align-self-center">Pericia</ion-col>
+        <ion-col size="6" class="ion-no-padding">
+          <ion-rating [rate]="0"
+            [readonly] = "false">
+          </ion-rating>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding ion-text-center">
+        <ion-col size="6" class="ion-align-self-center">Profesionalismo</ion-col>
+        <ion-col size="6" class="ion-no-padding">
+          <ion-rating [(rate)]="prof" (click)="test()"
+            [readonly] = "false">
+          </ion-rating>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding ion-text-center">
+        <ion-col size="6" class="ion-align-self-center">¿Contratar de nuevo?</ion-col>
+        <ion-col size="6" class="ion-no-padding">
+          <ion-rating [rate]="0"
+            [readonly] = "false">
+          </ion-rating>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h3>¿El empleador hizo un gran trabajo?</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-text-justify">
+          Ayude a Luis Guillermo a ganar su próximo proyecto contándoles a todos un poco sobre él. Las revisiones más largas dan a otros empleadores la confianza para contratar buenos trabajadores independientes, como Luis Guillermo , y ayuda a garantizar que empleadores como usted continúen recibiendo nada más que la mejor calidad de trabajo.
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Comentario (opcional)</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row class="ion-text-center">
+        <ion-col>
+          <ion-button color="medium" (click)="test()">Enviar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

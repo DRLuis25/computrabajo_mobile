@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/anuncios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle anuncio</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>{{anuncio.titulo}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-text-justify">
+            {{anuncio.descripcion}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">Ubicación</ion-col>
+          <ion-col size="6">{{departamento.nombre}} - {{ciudad.nombre}} - {{distrito.nombre}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">Fecha publicación</ion-col>
+          <ion-col size="6">{{anuncio.creado_el}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">Estado</ion-col>
+          <ion-col size="6">{{anuncio.estado}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-text-center">
+      <ion-col>
+        <ion-button color="medium" (click)="finalizarAnuncio(anuncio.id)">Finalizar anuncio</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col>
+        <ion-text class="ion-text-center">
+          <h3>Colaboradores</h3>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card *ngFor="let colaborador of anuncio.colaboradores">
+    <ion-card-header>
+      <ion-card-subtitle>Trabajador 1</ion-card-subtitle>
+      <ion-card-title class="ion-text-center">{{colaborador.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+      <img src="https://freepikpsd.com/media/2019/10/default-user-profile-image-png-6-Transparent-Images.png" />
+      <p>{{colaborador.acerca_de_mi}}</p>
+      <ion-grid>
+        <ion-row class="ion-no-padding">
+          <ion-col class="ion-no-padding">
+            <ion-rating [rate]="colaborador.calificacion_colaborador"
+              [readonly] = "true">
+            </ion-rating>
+          </ion-col>
+          <!-- <ion-col size="6">1 evaluación</ion-col> -->
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    <ion-item href="#" class="ion-text-center">
+      <ion-label>Ver Perfil</ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>
