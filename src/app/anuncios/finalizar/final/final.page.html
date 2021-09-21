@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>final</ion-title>
+    <ion-title>Gracias por calificar</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{anuncio.titulo}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Gracias por calificar el trabajo de nuestros colaboradores
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      Las revisiones más largas dan a otros empleadores la confianza para contratar buenos trabajadores independientes y ayuda a garantizar que empleadores como usted continúen recibiendo nada más que la mejor calidad de trabajo.
+    </ion-card-content>
+  </ion-card>
+  <ion-grid class="ion-no-padding" >
+    <ion-row class="ion-text-center">
+      <ion-col>
+        <ion-button color="medium" [routerLink]="['/anuncios/mis-anuncios']">Ir a mis anuncios</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

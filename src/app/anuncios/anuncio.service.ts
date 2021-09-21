@@ -21,4 +21,9 @@ export class AnuncioService {
 	}
 	deleteAnuncio(){
 	}
+	finalizarAnuncio(idAnuncio, termino, valoracion, comentario){
+		return this.http.post<any>('http://localhost:8000/api/anuncios/finalizar-anuncio',{
+			idAnuncio, termino, valoracion, comentario
+		});
+	}
 }

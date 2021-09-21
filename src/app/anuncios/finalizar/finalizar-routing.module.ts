@@ -8,10 +8,10 @@ const routes: Routes = [
 		path: '',
 		component: FinalizarPage
 	},
-  {
-    path: 'final',
-    loadChildren: () => import('./final/final.module').then( m => m.FinalPageModule)
-  }
+	{
+		path: 'final',
+		loadChildren: () => import('./final/final.module').then( m => m.FinalPageModule)
+	}
 ];
 
 @NgModule({
