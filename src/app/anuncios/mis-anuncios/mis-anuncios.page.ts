@@ -8,6 +8,8 @@ import { AnuncioService } from '../anuncio.service';
 })
 export class MisAnunciosPage implements OnInit {
   anuncios: any = [];
+  items:any;
+
   constructor(private anuncioService: AnuncioService) {}
 
   ngOnInit() {
@@ -15,10 +17,26 @@ export class MisAnunciosPage implements OnInit {
   	this.anuncioService.getAnuncios().subscribe(
   		(res) => {
   			this.anuncios = res.data;
+			this.items = this.anuncios;
   		},
   		(err) => {
   			console.log('ERROR: ', err);
   		}
   	);
   }
+
+  initializaItems() {
+	this.items = this.anuncios;
+  }
+
+  getItems(ev: any) {
+	  this.initializaItems();
+	  let val = ev.target.value;
+	  if(val && val.trim() != '') {
+		  this.items = this.items.filter((item) => {
+			  return (item.titulo.toLowerCase().indexOf(val.toLowerCase()) > -1);
+		  })
+	  }
+  }
+
 }

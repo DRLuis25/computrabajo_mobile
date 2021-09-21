@@ -32,6 +32,10 @@ const routes: Routes = [
 			}
 		]
 	},
+	{
+		path: 'filtros',
+		loadChildren: () => import('./filtros/filtros.module').then( m => m.FiltrosPageModule)
+	},
 	/* {
 		path: 'finalizar',
 		loadChildren: () => import('./anuncios/finalizar/finalizar.module').then( m => m.FinalizarPageModule)
