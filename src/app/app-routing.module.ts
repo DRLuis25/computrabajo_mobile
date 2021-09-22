@@ -29,6 +29,14 @@ const routes: Routes = [
 				path: '',
 				redirectTo: '/anuncios/mis-anuncios',
 				pathMatch: 'full'
+			},
+			{
+				path:'publicar-anuncio',
+				loadChildren:() => import('./anuncios/publicar-anuncio/publicar-anuncio.module').then( m => m.PublicarAnuncioPageModule)
+			},
+			{
+				path:'editar-anuncio/:anuncioId',
+				loadChildren:() => import('./anuncios/editar-anuncio/editar-anuncio.module').then( m => m.EditarAnuncioPageModule)
 			}
 		]
 	},
@@ -36,6 +44,16 @@ const routes: Routes = [
 		path: 'filtros',
 		loadChildren: () => import('./filtros/filtros.module').then( m => m.FiltrosPageModule)
 	},
+  {
+    path: 'publicar-anuncio',
+    loadChildren: () => import('./anuncios/publicar-anuncio/publicar-anuncio.module').then( m => m.PublicarAnuncioPageModule)
+  },
+  {
+    path: 'editar-anuncio',
+    loadChildren: () => import('./anuncios/editar-anuncio/editar-anuncio.module').then( m => m.EditarAnuncioPageModule)
+  },
+
+
 	/* {
 		path: 'finalizar',
 		loadChildren: () => import('./anuncios/finalizar/finalizar.module').then( m => m.FinalizarPageModule)

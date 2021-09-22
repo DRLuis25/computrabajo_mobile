@@ -6,13 +6,18 @@
 
 <ion-content>
 
+  <section>
+    <ion-button expand="block" color="warning" style="color:black" [routerLink]="['/anuncios/publicar-anuncio']" ><b>Publicar un anuncio</b></ion-button>
+  </section>
+
   <ion-searchbar (ionInput) = "getItems($event)" placeholder="Buscar"></ion-searchbar>
 
-  <ion-card *ngFor="let anuncio of items" [routerLink]="['/anuncios/finalizar',anuncio.id]">
-    <ion-card-content>
-      <ion-list>
+  <ion-card *ngFor="let anuncio of items">
+    <ion-card-content >
+
+      <ion-list style="padding: 0px;">
         <ion-item>
-          <ion-label>
+          <ion-label [routerLink]="['/anuncios/finalizar',anuncio.id]">
       <div style="margin-bottom: 0px; font-size: 14px">
         <div class="card">
             <div class="card-body">
@@ -42,12 +47,17 @@
         </div>
     </div>
   </ion-label>
-  <ion-note slot="end">
+  <ion-note slot="end" style="margin: 0px; padding: 10px 0px 10px 10px;">
     <div style="text-align: center;">Monto:
       <div ><b style="color: green;font-size: 15px;">S/. {{ anuncio.pago_propuesto_min }}</b></div>
       <div><b style="color: green;font-size: 15px;">S/. {{ anuncio.pago_propuesto_max }}</b></div>
     </div>
-    <br>
+    <div *ngIf=" anuncio.colaboradores.length == '0'" style="text-align: center;">
+      <a [routerLink]="['/anuncios/editar-anuncio',anuncio.id]"><b><ion-icon name="create-outline" style="font-size: 25px; color: #2A5C98;"></ion-icon></b></a>
+    </div>
+    <div *ngIf=" anuncio.colaboradores.length != '0'">
+      <br>
+    </div>
     <div style="text-align: center;">Inscritos:
       <p style="color:#2A5C98; font-size: 25px;">
         <b>{{anuncio.colaboradores.length}}</b>
