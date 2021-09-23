@@ -6,4 +6,110 @@
 
 <ion-content>
 
+  <ion-list>
+    <ion-item-divider style="font-size: 18px; color: #2A5C98; background-color: #F7F7F7;">
+      <ion-label>CARACTERÍSTICAS DEL ANUNCIO</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>Fecha de expiración</ion-label>
+      <ion-datetime placeholder="Seleccione la fecha" displayFormat="DD MM YYYY" date="YYYY-MM-DD" #fecha value={{anuncio.fecha_expiracion}}></ion-datetime>
+    </ion-item>
+
+    <ion-item-group>
+      <ion-radio-group value="grape" #email>
+        <ion-list-header style="font-size: 16px;">
+          <ion-label>Mostrar e-mail de contacto:</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Si</ion-label>
+          <ion-radio slot="start" color="success" value="1"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio slot="start" color="tertiary" value="0"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-item-group>
+
+    <ion-item-group>
+      <ion-radio-group value="grape" #telefono>
+        <ion-list-header style="font-size: 16px;">
+          <ion-label>Mostrar telefono de contacto:</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Si</ion-label>
+          <ion-radio slot="start" color="success" value="1"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio slot="start" color="tertiary" value="0"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-item-group>
+
+  <ion-item-group>
+      <ion-radio-group value="grape" #direccion>
+        <ion-list-header style="font-size: 16px;">
+          <ion-label>Mostrar dirección de contacto:</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Si</ion-label>
+          <ion-radio slot="start" color="success" value="1"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio slot="start" color="tertiary" value="0"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-item-group>
+
+
+      <ion-item-divider style="font-size: 18px; color: #2A5C98; background-color: #F7F7F7;">
+        <ion-label>DATOS DEL ANUNCIO</ion-label>
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label position="floating">Título del anuncio</ion-label>
+        <ion-input #titulo value={{anuncio.titulo}}></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Oficio</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+    
+    <ion-item>
+      <ion-label position="stacked">Descripción de tareas</ion-label>
+      <ion-textarea placeholder="placeholder"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Pago</ion-label>
+      <ion-input placeholder="Minimo"  #minimo></ion-input>
+      <ion-input placeholder="Máximo"  #maximo></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Departamento</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Ciudad</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Distrito</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <section>
+    <ion-button expand="block" color="warning" style="color:black" (click)="editarAnuncio(anuncio.id, fecha, email, telefono, direccion, titulo, descripcion, minimo, maximo)"><b>Actualizar</b></ion-button>
+  </section>
+
 </ion-content>
