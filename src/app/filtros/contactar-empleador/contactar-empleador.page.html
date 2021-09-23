@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>contactarEmpleador</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button [routerLink]="['/filtros']"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-title>Haga una Oferta a este trabajo</ion-title>
+      <ion-item-divider></ion-item-divider>
+      <ion-item class="ion-margin-top">
+        <ion-label position="floating">Importe de la oferta </ion-label
+        ><ion-input type="number"  placeholder="Monto en soles" formControlName="importe"> </ion-input>
+      </ion-item>
+
+      <ion-item class="ion-margin-top">
+        <ion-label position="floating">Tiempo propuesto </ion-label
+        ><ion-input type="number" placeholder="Monto en soles" formControlName="tiempo"> </ion-input>
+      </ion-item>
+
+      <ion-item class="ion-margin-top">
+        <ion-label position="floating">Describa su propuesta</ion-label
+        ><ion-textarea  formControlName="descripcion" rows=4 > </ion-textarea>
+      </ion-item>
+    </ion-list>
+    <ion-list style="text-align: center">
+      <ion-button
+        color="primary"
+        routerLink="/filtros"
+        (click)="submitPostula()"
+        [disabled]="form.invalid"
+        >Realizar Oferta</ion-button
+      >
+    </ion-list>
+  </form>
+</ion-content>

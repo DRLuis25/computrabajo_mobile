@@ -1,12 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>filtros acomodando...</ion-title>
+    <ion-title>Empleos</ion-title>
+   
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let anuncios of anuncios$|async ">
-    {{anuncios.titulo}}
-  </ion-card>
+  <ion-title class="ion-padding-top">Buscar Empleos</ion-title>
+        <ion-searchbar ></ion-searchbar>
+
+  <ion-list> 
+    <ion-item  *ngFor="let anuncio of anuncios$|async " [routerLink]="['/filtros', anuncio.id ]"> 
+    <ion-label   >
+      <ion-title color="primary" class="ion-no-padding"> {{anuncio.titulo}}</ion-title>
+      <ion-card-subtitle >{{anuncio.pago_propuesto_min}} - {{anuncio.pago_propuesto_max}}</ion-card-subtitle>
+      <ion-card-subtitle >hace {{anuncio.pago_propuesto_min}}</ion-card-subtitle>
+      <ion-text >{{anuncio.descripcion}}</ion-text>
+    </ion-label>
+  </ion-item>
+  
+  </ion-list>
   
 </ion-content>

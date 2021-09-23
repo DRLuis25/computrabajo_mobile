@@ -8,6 +8,8 @@ const routes: Routes = [
 	},
 	{
 		path: 'anuncios',
+
+		
 		children:[
 			{
 				path:'mis-anuncios',
@@ -24,22 +26,35 @@ const routes: Routes = [
 			{
 				path: 'finalizar/:anuncioId/final',
 				loadChildren: () => import('./anuncios/finalizar/final/final.module').then( m => m.FinalPageModule)
+
 			},
 			{
 				path: '',
 				redirectTo: '/anuncios/mis-anuncios',
 				pathMatch: 'full'
-			},
-			{
-				path:'publicar-anuncio',
-				loadChildren:() => import('./anuncios/publicar-anuncio/publicar-anuncio.module').then( m => m.PublicarAnuncioPageModule)
-			},
-			{
-				path:'editar-anuncio/:anuncioId',
-				loadChildren:() => import('./anuncios/editar-anuncio/editar-anuncio.module').then( m => m.EditarAnuncioPageModule)
+
 			}
 		]
 	},
+	{
+		path: 'filtros',
+		children: [
+			{
+				path: "",
+				loadChildren: () => import('./filtros/filtros.module').then(m => m.FiltrosPageModule)
+			},
+			{
+				path: ":id",
+				loadChildren: () => import('./filtros/contactar-empleador/contactar-empleador.module').then(m =>m.ContactarEmpleadorPageModule)
+			}
+		]
+	},
+  {
+    path: 'add-user-anuncio',
+    loadChildren: () => import('./filtros/add-user-anuncio/add-user-anuncio.module').then( m => m.AddUserAnuncioPageModule)
+  },
+
+			
 	{
 		path: 'filtros',
 		loadChildren: () => import('./filtros/filtros.module').then( m => m.FiltrosPageModule)
@@ -52,6 +67,7 @@ const routes: Routes = [
     path: 'editar-anuncio',
     loadChildren: () => import('./anuncios/editar-anuncio/editar-anuncio.module').then( m => m.EditarAnuncioPageModule)
   },
+
 
 
 	/* {
@@ -69,4 +85,7 @@ const routes: Routes = [
 	],
 	exports: [RouterModule]
 })
-export class AppRoutingModule {}
+
+export class AppRoutingModule { }
+
+
