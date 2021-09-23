@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>contactarEmpleador</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button [routerLink]="['/filtros']"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -27,7 +30,7 @@
     <ion-list style="text-align: center">
       <ion-button
         color="primary"
-        routerLink="/filtros/add-user-anuncio"
+        routerLink="/filtros"
         (click)="submitPostula()"
         [disabled]="form.invalid"
         >Realizar Oferta</ion-button
