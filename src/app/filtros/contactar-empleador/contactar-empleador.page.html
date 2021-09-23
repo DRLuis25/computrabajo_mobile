@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>contactarEmpleador</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup] = 'form'>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Haga una oferta a este trabajo</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-card-subtitle> Detalles de la oferta</ion-card-subtitle>
+        <ion-item-divider>Importe de la oferta</ion-item-divider>
+        <ion-item>
+          <ion-input
+            type="number"
+            placeholder="Oferta en soles"
+            formControlName='importe'
+          ></ion-input>
+        </ion-item>
+        <ion-item-divider>Este trabajo terminara en</ion-item-divider>
+        <ion-item>
+          <ion-input
+            type="number"
+            placeholder="Oferta en soles"
+            formControlName='tiempo'
+          ></ion-input>
+        </ion-item>
+        <ion-item-divider>Describa su propuesta</ion-item-divider>
+        <ion-item>
+          <ion-textarea formControlName='descripcion'> </ion-textarea>
+        </ion-item>
+        <ion-input></ion-input>
+      </ion-card-content>
+      <ng-container>
+        <ion-list style="text-align: center">
+          <ion-button color="primary" routerLink="/filtros/add-user-anuncio" (click)="submitPostula()" [disabled]= "form.invalid"
+            >Realizar Oferta</ion-button
+          >
+        </ion-list>
+      </ng-container>
+    </ion-card>
+  </form>
+</ion-content>

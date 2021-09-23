@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: FiltrosPage
+  },
+  {
+    path: 'contactar-empleador',
+    loadChildren: () => import('./contactar-empleador/contactar-empleador.module').then( m => m.ContactarEmpleadorPageModule)
+  },
+  {
+    path: 'add-user-anuncio',
+    loadChildren: () => import('./add-user-anuncio/add-user-anuncio.module').then( m => m.AddUserAnuncioPageModule)
   }
 ];
 

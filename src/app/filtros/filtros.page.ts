@@ -15,6 +15,7 @@ export class FiltrosPage implements OnInit {
   constructor(private FiltroService: FiltroService, private loadingCtrl: LoadingController) { }
 
   async ngOnInit() {
+    
     const loading = await this.loadingCtrl.create({message: 'loading ...'});
     loading.present();
 
@@ -22,6 +23,7 @@ export class FiltrosPage implements OnInit {
       tap(anuncios =>{
         loading.dismiss();
         return anuncios;
+        
       })
     );
   }
