@@ -15,10 +15,21 @@ export class AnuncioService {
 	getAnuncioById(id: string){
 		return this.http.get<any>('http://localhost:8000/api/anuncios/'+id);
 	}
-	createAnuncio(){
+	createAnuncio(id){
+		return this.http.post<any>('http://localhost:8000/api/anuncios/',{
+			id
+		});
 	}
-	editAnuncio(){
+	editAnuncio(idAnuncio){
+		return this.http.post<any>('http://localhost:8000/api/anuncios/',{
+			idAnuncio
+		});
 	}
 	deleteAnuncio(){
+	}
+	finalizarAnuncio(idAnuncio, termino, valoracion, comentario){
+		return this.http.post<any>('http://localhost:8000/api/anuncios/finalizar-anuncio',{
+			idAnuncio, termino, valoracion, comentario
+		});
 	}
 }

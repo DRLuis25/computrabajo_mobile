@@ -36,42 +36,10 @@
           <h3>Valoración</h3>
         </ion-col>
       </ion-row>
-      <ion-row class="ion-no-padding ion-text-center">
-        <ion-col size="6" class="ion-align-self-center">Calidad</ion-col>
+      <ion-row class="ion-no-padding ion-text-center" *ngFor="let criterio of criterios">
+        <ion-col size="6" class="ion-align-self-center">{{criterio.descripcion}}</ion-col>
         <ion-col size="6" class="ion-no-padding">
-          <ion-rating [rate]="0"
-            [readonly] = "false">
-          </ion-rating>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-no-padding ion-text-center">
-        <ion-col size="6" class="ion-align-self-center">Comunicación</ion-col>
-        <ion-col size="6" class="ion-no-padding">
-          <ion-rating [rate]="0"
-            [readonly] = "false">
-          </ion-rating>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-no-padding ion-text-center">
-        <ion-col size="6" class="ion-align-self-center">Pericia</ion-col>
-        <ion-col size="6" class="ion-no-padding">
-          <ion-rating [rate]="0"
-            [readonly] = "false">
-          </ion-rating>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-no-padding ion-text-center">
-        <ion-col size="6" class="ion-align-self-center">Profesionalismo</ion-col>
-        <ion-col size="6" class="ion-no-padding">
-          <ion-rating [(rate)]="prof" (click)="test()"
-            [readonly] = "false">
-          </ion-rating>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-no-padding ion-text-center">
-        <ion-col size="6" class="ion-align-self-center">¿Contratar de nuevo?</ion-col>
-        <ion-col size="6" class="ion-no-padding">
-          <ion-rating [rate]="0"
+          <ion-rating [(rate)]="valoracion[criterio.id]" (click)="test()"
             [readonly] = "false">
           </ion-rating>
         </ion-col>
@@ -87,14 +55,14 @@
       </ion-row>
       <ion-row>
         <ion-col class="ion-text-justify">
-          Ayude a Luis Guillermo a ganar su próximo proyecto contándoles a todos un poco sobre él. Las revisiones más largas dan a otros empleadores la confianza para contratar buenos trabajadores independientes, como Luis Guillermo , y ayuda a garantizar que empleadores como usted continúen recibiendo nada más que la mejor calidad de trabajo.
+          Ayude a nuestros colaboradores a ganar su próximo proyecto contándoles a todos un poco sobre él. Las revisiones más largas dan a otros empleadores la confianza para contratar buenos trabajadores independientes y ayude a garantizar que empleadores como usted continúen recibiendo nada más que la mejor calidad de trabajo.
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
           <ion-item>
             <ion-label position="floating">Comentario (opcional)</ion-label>
-            <ion-textarea></ion-textarea>
+            <ion-textarea [(ngModel)]="comentario"></ion-textarea>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -102,7 +70,7 @@
     <ion-grid>
       <ion-row class="ion-text-center">
         <ion-col>
-          <ion-button color="medium" (click)="test()">Enviar</ion-button>
+          <ion-button color="medium" (click)="enviarValoracion()">Enviar</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

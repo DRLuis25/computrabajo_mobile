@@ -1,17 +1,72 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>mis-anuncios (Parte Alejandro)</ion-title>
+    <ion-title>Mis Anuncios</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let anuncio of anuncios" [routerLink]="['/anuncios/finalizar',anuncio.id]">
-    <ion-card-header>
-      <ion-card-subtitle>Anuncio</ion-card-subtitle>
-      <ion-card-title>{{anuncio.titulo}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      {{anuncio.descripcion}}
+
+  <section>
+    <ion-button expand="block" color="warning" style="color:black" [routerLink]="['/anuncios/publicar-anuncio']" ><b>Publicar un anuncio</b></ion-button>
+  </section>
+
+  <ion-searchbar (ionInput) = "getItems($event)" placeholder="Buscar"></ion-searchbar>
+
+  <ion-card *ngFor="let anuncio of items">
+    <ion-card-content >
+
+      <ion-list style="padding: 0px;">
+        <ion-item>
+          <ion-label [routerLink]="['/anuncios/finalizar',anuncio.id]">
+      <div style="margin-bottom: 0px; font-size: 14px">
+        <div class="card">
+            <div class="card-body">
+                <div class="row g-0">
+                    <div class="col-sm-6 col-md-6">
+                        <h5 class="card-title" style="color: #2A5C98">
+                            <b><ion-label>{{ anuncio.titulo }}</ion-label></b>
+                        </h5>
+                        <div>Depart.: {{ anuncio.departamento.nombre }}</div>
+                        <div>Ciudad: {{anuncio.ciudad.nombre}}</div>
+                        <div>Distrito: {{anuncio.distrito.nombre}}</div>
+                        <div>Expira: {{anuncio.fecha_expiracion.substring(0,10)}}</div>
+
+                    </div>
+                    <div class="col-sm-2 col-md-2" style="display: table; text-align: center; font-size: 15px">
+                        <div style="display: table-cell; vertical-align: middle;"></div>
+                        
+                    </div>
+                    <div class="col-sm-2 col-md-2" style="display: table;text-align: center">
+                        <div>
+                          <p *ngIf=" anuncio.estado == '1'" >Estado: En proceso</p>
+                          <p *ngIf=" anuncio.estado == '0'" >Estado: Inactivo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </ion-label>
+  <ion-note slot="end" style="margin: 0px; padding: 10px 0px 10px 10px;">
+    <div style="text-align: center;">Monto:
+      <div ><b style="color: green;font-size: 15px;">S/. {{ anuncio.pago_propuesto_min }}</b></div>
+      <div><b style="color: green;font-size: 15px;">S/. {{ anuncio.pago_propuesto_max }}</b></div>
+    </div>
+    <div *ngIf=" anuncio.colaboradores.length == '0'" style="text-align: center;">
+      <a [routerLink]="['/anuncios/editar-anuncio',anuncio.id]"><b><ion-icon name="create-outline" style="font-size: 25px; color: #2A5C98;"></ion-icon></b></a>
+    </div>
+    <div *ngIf=" anuncio.colaboradores.length != '0'">
+      <br>
+    </div>
+    <div style="text-align: center;">Inscritos:
+      <p style="color:#2A5C98; font-size: 25px;">
+        <b>{{anuncio.colaboradores.length}}</b>
+      </p>
+    </div>
+  </ion-note>
+  </ion-item>
+  </ion-list>
     </ion-card-content>
+    
   </ion-card>
 </ion-content>

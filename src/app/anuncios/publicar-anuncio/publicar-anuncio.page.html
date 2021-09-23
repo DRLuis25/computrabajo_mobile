@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Publicar Nuevo Anuncio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-divider style="font-size: 18px; color: #2A5C98; background-color: #F7F7F7;">
+      <ion-label>CARACTERÍSTICAS DEL ANUNCIO</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>Fecha de expiración</ion-label>
+      <ion-datetime placeholder="Seleccione la fecha" displayFormat="DD MM YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item-group>
+      <ion-radio-group value="grape">
+        <ion-list-header style="font-size: 16px;">
+          <ion-label>Mostrar e-mail de contacto:</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Si</ion-label>
+          <ion-radio slot="start" color="success" value="apple"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio slot="start" color="tertiary" value="grape"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-item-group>
+
+    <ion-item-group>
+      <ion-radio-group value="grape">
+        <ion-list-header style="font-size: 16px;">
+          <ion-label>Mostrar telefono de contacto:</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Si</ion-label>
+          <ion-radio slot="start" color="success" value="apple"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio slot="start" color="tertiary" value="grape"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-item-group>
+
+  <ion-item-group>
+      <ion-radio-group value="grape">
+        <ion-list-header style="font-size: 16px;">
+          <ion-label>Mostrar dirección de contacto:</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Si</ion-label>
+          <ion-radio slot="start" color="success" value="apple"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio slot="start" color="tertiary" value="grape"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-item-group>
+
+
+      <ion-item-divider style="font-size: 18px; color: #2A5C98; background-color: #F7F7F7;">
+        <ion-label>DATOS DEL ANUNCIO</ion-label>
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label position="floating">Título del anuncio</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+    <ion-item>
+      <ion-label>Oficio</ion-label>
+      <ion-select ok-text="Seleccionar" cancel-text="Cancelar">
+        <ion-select-option value="dos">Carpintero</ion-select-option>
+        <ion-select-option value="lunix">Soldador</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Descripción de tareas</ion-label>
+      <ion-textarea placeholder="placeholder"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Pago</ion-label>
+      <ion-input placeholder="Minimo"></ion-input>
+      <ion-input placeholder="Máximo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Departamento</ion-label>
+      <ion-select ok-text="Seleccionar" cancel-text="Cancelar">
+        <ion-select-option value="dos">La Libertad</ion-select-option>
+        <ion-select-option value="lunix">Lima</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Ciudad</ion-label>
+      <ion-select ok-text="Seleccionar" cancel-text="Cancelar">
+        <ion-select-option value="dos">Trujillo</ion-select-option>
+        <ion-select-option value="lunix">Otusco</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Distrito</ion-label>
+      <ion-select ok-text="Seleccionar" cancel-text="Cancelar">
+        <ion-select-option value="dos">Trujillo</ion-select-option>
+        <ion-select-option value="lunix">El Porvenir</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <section>
+    <ion-button expand="block" color="warning" style="color:black"><b>Publicar</b></ion-button>
+  </section>
+
+</ion-content>
